@@ -3,6 +3,7 @@ import { sponsorsSettingItems } from './license/github-obsidian';
 import { PRO_UI, isPro } from './pro';
 import { DEFAULT_MAP, FIELDS, TAGS, normalizeMap, type Field, type FieldMap } from './ris';
 import type NoteRisExportPlugin from './main';
+import { helloSettingItems } from './hello/settings';
 
 export interface NamedMap {
 	name: string;
@@ -83,6 +84,11 @@ export class NoteRisExportSettingTab extends PluginSettingTab {
 	}
 
 	getSettingDefinitions(): SettingDefinitionItem[] {
+		// The product rows, then the "More from NoteMods" card (packages/hello).
+		return [...this.productSettingDefinitions(), ...helloSettingItems()];
+	}
+
+	productSettingDefinitions(): SettingDefinitionItem[] {
 		return [
 			{ name: 'Reference folder', desc: 'The export reads the Markdown notes in this folder and its subfolders. Empty means the vault root.', control: { type: 'text', key: 'folder', defaultValue: '' } },
 			{ name: 'Output file', desc: 'Path of the new RIS file. If the file exists, the export adds (2), (3) and so on to the name.', control: { type: 'text', key: 'output', defaultValue: DEFAULT_SETTINGS.output } },

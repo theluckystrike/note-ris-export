@@ -5,6 +5,8 @@ import { SPONSORS, bindPro, isPro, resetPro } from './pro';
 import { DEFAULT_SETTINGS, NoteRisExportSettingTab, normalizeSettings, type NoteRisExportSettings } from './settings';
 import { buildRis, byPath, checkSources, freePath, inFolder, matchesFilter, parseFilter, type FieldMap, type Problem, type Source } from './ris';
 import { ExportModal } from './modal';
+import { setupHello } from './hello/index';
+import WHATS_NEW from './whats-new.json';
 
 /** How long the Pro repeat waits after the last mapped change before it writes. */
 export const REPEAT_DELAY_MS = 2000;
@@ -45,6 +47,8 @@ export default class NoteRisExportPlugin extends Plugin {
 	private stopped = false;
 
 	async onload(): Promise<void> {
+		// First: "What's new" reads its state before the settings load (packages/hello). It does not wait.
+		setupHello(this, WHATS_NEW);
 		this.stopped = false;
 		await this.loadSettings();
 		// No request here: a request needs a GitHub sign in first (Settings, Pro, Sign in with GitHub).

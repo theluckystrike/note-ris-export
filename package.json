@@ -1,6 +1,6 @@
 {
 	"name": "note-ris-export",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"private": true,
 	"description": "Map reference note properties to fields in a local RIS file.",
 	"main": "main.js",

@@ -71,7 +71,7 @@ The command "Repeat the last .ris export (pro)" runs the last export again with 
 
 ## Install
 
-When Note RIS Export is listed in the community directory, open Settings, then Community plugins, then Browse, and search for "Note RIS Export". Select Install, then Enable.
+Open Settings, then Community plugins, then Browse, and search for "Note RIS Export". Select Install, then Enable.
 
 To install by hand, download `main.js`, `manifest.json` and `styles.css` from the latest release. Put the three files in `<vault>/.obsidian/plugins/note-ris-export/`. Restart Obsidian or reload the list of community plugins, then turn on Note RIS Export. This build needs Obsidian 1.13.4 or later.
 
@@ -86,6 +86,8 @@ To install by hand, download `main.js`, `manifest.json` and `styles.css` from th
 
 ## Settings
 
+After a minor or major update, this plugin opens one What's new tab in the background. The tab and settings card suggest other NoteMods plugins and Zovo Chat and link to notemods.com for feedback ([privacy](https://notemods.com/privacy/)). The tab sends no data. Turn the tab off in Settings.
+
 - Reference folder: the folder that the export window shows first.
 - Output file: the path of the new RIS file. The folder of this path must exist.
 - Field map: the eight property keys. An empty key goes back to its default.
@@ -96,10 +98,6 @@ To install by hand, download `main.js`, `manifest.json` and `styles.css` from th
 ### What was not tested?
 
 The unit tests pass with an in-memory vault. The end-to-end tests pass in Obsidian 1.13.4 and 1.14.4. Import into a reference manager was not tested. Physical phones and tablets, third-party themes, screen readers, large vaults, sync between devices and the live GitHub payment and sign in were not tested. The manifest permits mobile because the source uses no Node or Electron API.
-
-### Where does the file go?
-
-The default output is `References.ris` at the vault root. Set Output file to a path in an existing folder. A free export adds a number if the selected path exists.
 
 ### Does my reference data leave my device?
 
@@ -123,7 +121,7 @@ After a successful check, Pro can work offline for up to 14 days. Sign out or a 
 
 ## Support
 
-Report a bug or ask for a feature in the issue tracker of this repository. Include the Obsidian version and a small sample note. To support the work, use [GitHub Sponsors](https://github.com/sponsors/theluckystrike).
+Report a bug or ask for a feature in the issue tracker of this repository. Include the Obsidian version and a small sample note.
 
 ## License
 
