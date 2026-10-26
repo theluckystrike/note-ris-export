@@ -1,7 +1,7 @@
 import { Notice, Plugin, TFile, normalizePath } from 'obsidian';
 import type { SponsorsManager } from './license/index';
 import { createGitHubSponsors } from './license/github-obsidian';
-import { SPONSORS, bindPro, isPro, resetPro } from './pro';
+import { SPONSORS, bindPro, isPro, resetPro, proNotice } from './pro';
 import { DEFAULT_SETTINGS, NoteRisExportSettingTab, normalizeSettings, type NoteRisExportSettings } from './settings';
 import { buildRis, byPath, checkSources, freePath, inFolder, matchesFilter, parseFilter, type FieldMap, type Problem, type Source } from './ris';
 import { ExportModal } from './modal';
@@ -93,7 +93,7 @@ export default class NoteRisExportPlugin extends Plugin {
 
 	needsPro(feature: string): boolean {
 		if (isPro()) return false;
-		new Notice(`${feature} is a Pro feature. Sponsor on GitHub, then sign in from the plugin settings.`);
+		proNotice(`${feature} is a Pro feature.`);
 		return true;
 	}
 

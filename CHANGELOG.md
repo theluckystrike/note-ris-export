@@ -1,5 +1,11 @@
 # note-ris-export
 
+## 1.1.1
+
+### Patch Changes
+
+- The Pro notice for repeat export now has a Sponsor on GitHub button.
+
 ## 1.1.0
 
 ### Minor Changes

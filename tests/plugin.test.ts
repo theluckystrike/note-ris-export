@@ -17,7 +17,7 @@ async function setup(files: Record<string, string>): Promise<{ app: App; plugin:
 
 function pro(on: boolean): void {
 	resetPro();
-	bindPro({ isPro: () => on, onChange: () => () => undefined } as never);
+	bindPro({ isPro: () => on, getState: () => ({ status: 'signed-out', lastAttemptAt: 0 }), hasToken: () => false, config: { sponsorLogin: 'theluckystrike' }, onChange: () => () => undefined } as never);
 }
 
 async function text(app: App, path: string): Promise<string> {
