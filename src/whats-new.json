@@ -1,8 +1,9 @@
 {
 	"id": "note-ris-export",
 	"name": "Note RIS Export",
-	"version": "1.1.1",
+	"version": "1.1.2",
 	"changes": [
+		"The Pro notice of Note RIS Export now says that one payment turns on Pro in every NoteMods plugin.",
 		"The Pro notice for repeat export now has a Sponsor on GitHub button."
 	],
 	"tip": "If your notes keep the title in paper_title, set the title key to paper_title in the settings. The other RIS fields work the same way.",
